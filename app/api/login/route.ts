@@ -5,7 +5,8 @@ import { COOKIE_NAME, COOKIE_VALUE } from "@/lib/auth";
 export async function POST(request: Request) {
   const { password } = await request.json();
 
-  if (password === process.env.SITE_PASSWORD) {
+  const sitePassword = process.env.SITE_PASSWORD || "Dilip@ragu";
+  if (password === sitePassword) {
     const cookieStore = await cookies();
     cookieStore.set(COOKIE_NAME, COOKIE_VALUE, {
       httpOnly: true,
