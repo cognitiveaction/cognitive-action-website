@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - SITE_PASSWORD=Dilip@ragu
+      - AUTH_COOKIE_SECRET=${AUTH_COOKIE_SECRET}
+    volumes:
+      - subscriber-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  subscriber-data:
