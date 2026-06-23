@@ -19,7 +19,7 @@ const principles = [
   { icon: Cloud, title: "Cloud Agnostic", description: "Deploy on any provider or multi-cloud." },
   { icon: Fingerprint, title: "Your DNA", description: "Your unique processes and knowledge are encoded, not generic." },
   { icon: TrendingUp, title: "Compounding Intelligence", description: "The system learns and improves over time." },
-  { icon: Shield, title: "Enterprise-Grade Harnesses", description: "Security, compliance, observability built-in." },
+  { icon: Shield, title: "Enterprise-Grade Harnesses", description: "Security, compliance, observability, eval, and configurable policy engines — all built in." },
   { icon: Key, title: "Ownership", description: "The platform is yours — we hand it over or operate it for you." },
 ];
 
@@ -63,8 +63,8 @@ export default function PlatformPage() {
             </div>
 
             {/* Harnesses */}
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-3 mb-6 md:mb-8">
-              {["Security", "Policy", "Observability", "FinOps", "Evaluation"].map((h) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mb-6 md:mb-8">
+              {["Access Management", "Model Catalog", "Storage Catalog", "FinOps", "Eval", "Connectors", "Policy Engines", "Applications Catalog"].map((h) => (
                 <motion.div
                   key={h}
                   whileHover={{ scale: 1.05 }}
@@ -80,7 +80,7 @@ export default function PlatformPage() {
               <div className="bg-white rounded-xl md:rounded-2xl p-4 md:p-5 border border-[#E8E8ED]">
                 <p className="text-sm font-semibold text-[#1D1D1F] mb-3">Enterprise Apps</p>
                 <div className="flex flex-wrap gap-2">
-                  {["CRM", "ERP", "HRIS", "SCM"].map((app) => (
+                  {["CRM", "ERP", "HRIS", "SCM", "Custom Apps"].map((app) => (
                     <span key={app} className="px-3 py-1 bg-[#F5F5F7] rounded-lg text-xs text-[#6E6E73]">
                       {app}
                     </span>
