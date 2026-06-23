@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, ArrowRight, Sparkles, RefreshCw, Building2 } from "lucide-react";
+import { Target, ArrowRight, Sparkles, RefreshCw, Building2, Blocks, Heart } from "lucide-react";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -23,6 +23,16 @@ const values = [
     icon: Building2,
     title: "Your Platform, Your Choice",
     description: "Any LLM, any cloud, your preferences.",
+  },
+  {
+    icon: Blocks,
+    title: "Intelligence on Brownfield",
+    description: "We build intelligence on what you already have — no rip and replace. Your enterprise apps and databases become the foundation.",
+  },
+  {
+    icon: Heart,
+    title: "EI-Native to AI-Native",
+    description: "We lead with emotional intelligence, domain expertise, and software engineering. Collaboration with clients is our mantra.",
   },
 ];
 
