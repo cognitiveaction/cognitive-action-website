@@ -21,7 +21,7 @@ export default function ComingSoonPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-5xl font-bold tracking-tight text-[#1D1D1F]"
+          className="text-4xl md:text-5xl font-bold tracking-tight text-[#1D1D1F]"
         >
           Coming Soon
         </motion.h1>

@@ -50,15 +50,15 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <section className="max-w-6xl mx-auto px-6 py-24">
-        <AnimatedSection className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-[#1D1D1F] mb-4">Our Services</h1>
-          <p className="text-xl text-[#6E6E73] max-w-2xl mx-auto">
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-24">
+        <AnimatedSection className="text-center mb-10 md:mb-16">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#1D1D1F] mb-4">Our Services</h1>
+          <p className="text-lg md:text-xl text-[#6E6E73] max-w-2xl mx-auto">
             End-to-end capabilities to take you from vision to an operating AI-native enterprise.
           </p>
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {services.map((service) => (
             <StaggerItem key={service.title}>
               <ServiceCard

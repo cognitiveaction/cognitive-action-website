@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Brain } from "lucide-react";
+import { Brain, Menu, X } from "lucide-react";
 
 const links = [
   { href: "/home", label: "Home" },
@@ -13,6 +14,7 @@ const links = [
 
 export function Navbar() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-[#D2D2D7]/50">
@@ -23,7 +25,9 @@ export function Navbar() {
             CognitiveAction
           </span>
         </Link>
-        <div className="flex items-center gap-8">
+
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -38,7 +42,38 @@ export function Navbar() {
             </Link>
           ))}
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 text-[#1D1D1F]"
+          aria-label="Toggle menu"
+        >
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden border-t border-[#D2D2D7]/50 bg-white/95 backdrop-blur-xl">
+          <div className="px-6 py-4 flex flex-col gap-4">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={`text-base transition-colors ${
+                  pathname === link.href
+                    ? "text-[#1D1D1F] font-medium"
+                    : "text-[#6E6E73]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
